@@ -47,7 +47,7 @@ cd backend
 npm run dev
 ```
 
-Should see: `🚀 Server running on port 3001`
+Should see: `Server running on port 3001`
 
 ## Step 5: Start Frontend (New Terminal)
 
@@ -63,7 +63,7 @@ Should see: `Local: http://localhost:5173/`
 1. Open http://localhost:5173
 2. Click "Sign up" and create account
 3. Upload `sample-transactions.csv`
-4. Explore features!
+4. Explore features
 
 ## Make Admin User
 

@@ -8,7 +8,7 @@
 2. Click "New Project"
 3. Fill in:
    - Name: `ai-finance-advisor`
-   - Database Password: (save this!)
+   - Database Password: (save this)
    - Region: Choose closest to you
 4. Wait 2 minutes for project creation
 
@@ -51,7 +51,7 @@ Start backend:
 npm run dev
 ```
 
-You should see: `🚀 Server running on port 3001`
+You should see: `Server running on port 3001`
 
 ### Step 5: Frontend Setup
 
@@ -85,7 +85,7 @@ You should see: `Local: http://localhost:5173/`
 4. You'll be redirected to dashboard
 5. Click "Upload CSV"
 6. Upload `sample-transactions.csv` from project root
-7. Explore the features!
+7. Explore the features
 
 ## Creating an Admin User
 
