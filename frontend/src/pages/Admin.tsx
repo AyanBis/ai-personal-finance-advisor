@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import api from '@/services/api';
 import { formatDate, formatCurrency } from '@/lib/utils';
-import { Users, Activity, Upload, Trash2 } from 'lucide-react';
+import { Users, Activity, Trash2 } from 'lucide-react';
 
 interface AdminUser {
   id: string;

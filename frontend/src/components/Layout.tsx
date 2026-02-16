@@ -8,7 +8,6 @@ import {
   Receipt, 
   BarChart3, 
   Brain, 
-  Settings, 
   LogOut, 
   Moon, 
   Sun,
