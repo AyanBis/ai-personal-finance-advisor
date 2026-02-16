@@ -2,7 +2,13 @@ import axios from 'axios';
 import { supabase } from '@/lib/supabase';
 
 // Force cache bust - updated for Railway deployment
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+
+// Use relative path '/api' in production (Vercel) to avoid CORS and simplifying config
+// In development, it will use localhost:3001/api if VITE_API_URL is not set
+const API_URL = import.meta.env.PROD
+  ? '/api'
+  : (import.meta.env.VITE_API_URL || 'http://localhost:3001/api');
+
 
 const api = axios.create({
   baseURL: API_URL,

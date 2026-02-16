@@ -16,14 +16,7 @@ const PORT = parseInt(process.env.PORT || '3001', 10);
 
 app.use(helmet());
 app.use(cors({
-  origin: (origin, callback) => {
-    const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173').split(',');
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
   credentials: true
 }));
 app.use(express.json());
@@ -41,6 +34,13 @@ app.get('/health', (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
+
+// Export the app for Vercel Serverless
+export default app;
+
+// Only listen if not running in Vercel (local development)
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+  });
+}

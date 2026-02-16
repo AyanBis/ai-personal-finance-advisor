@@ -41,7 +41,9 @@ export function Dashboard() {
     formData.append('file', file);
 
     try {
-      const response = await api.post('/transactions/upload', formData);
+      const response = await api.post('/transactions/upload', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
       alert(`CSV uploaded successfully! Processed ${response.data.processed} transactions.`);
       
       // Force refresh the stats
