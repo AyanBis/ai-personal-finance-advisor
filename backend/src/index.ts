@@ -12,7 +12,7 @@ import aiRoutes from './routes/aiRoutes';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = parseInt(process.env.PORT || '3001', 10);
 
 app.use(helmet());
 app.use(cors({
